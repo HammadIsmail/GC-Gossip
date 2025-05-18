@@ -4,11 +4,8 @@ import { useState, useEffect } from 'react';
 
 export default function UniversityAnonymousPosts() {
   const departments = [
+    "International Relations",
     "Computer Science",
-    "Electrical Engineering",
-    "Chemical Engineering",
-    "Textile Engineering",
-    "Mechatronics Engineering"
   ];
 
   const [posts, setPosts] = useState([]);
@@ -18,7 +15,7 @@ export default function UniversityAnonymousPosts() {
     body: '',
     department: departments[0],
   });
-  const [selectedDepartment, setSelectedDepartment] = useState('Computer Science');
+  const [selectedDepartment, setSelectedDepartment] = useState('International Relations');
   const [formError, setFormError] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -99,7 +96,7 @@ const fetchPosts = async () => {
       {/* Header */}
       <header className="bg-blue-600 text-white p-4 shadow-md">
         <div className="container mx-auto flex  sm:flex-row justify-between gap-2 items-center">
-          <Link href="/"><h1 className="md:text-2xl text-sm  font-bold cursor-pointer">UET (FSD) Gossips</h1></Link>
+          <Link href="/"><h1 className="md:text-2xl text-sm  font-bold cursor-pointer">GCU Gossips</h1></Link>
           <div className="flex   sm:flex-row gap-2">
             <button
               onClick={() => setIsDialogOpen(true)}
@@ -244,7 +241,7 @@ const fetchPosts = async () => {
 
       {/* Footer */}
       <footer className="bg-gray-200 py-4 text-center text-gray-600">
-        <p>UET Anonymous Posts Platform</p>
+        <p>GCU Anonymous Posts Platform</p>
       </footer>
     </div>
   );

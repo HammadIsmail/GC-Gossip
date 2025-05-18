@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="container mx-auto flex justify-between items-center">
           <Link href={"/"}>
             {" "}
-            <h1 className="text-2xl cursor-pointer font-bold">{`UET (FSD) Gossips`}</h1>
+            <h1 className="text-2xl cursor-pointer font-bold">{`GCU Gossips`}</h1>
           </Link>
 
           <Link href={"/about"}>
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <div className="p-8">
         <h1 className="text-3xl font-bold mb-4">About Us</h1>
         <p className="text-gray-700">
-          UET{`(FSD)`} Gossips is a Anonymous Posts Platform is made to give
+          GCU Gossips is a Anonymous Posts Platform is made to give
           students and faculty a safe and easy way to share their thoughts,
           opinions, and experiences anonymously within their university
           community. It helps users speak freely without revealing their
