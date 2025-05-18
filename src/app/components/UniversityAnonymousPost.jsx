@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function UniversityAnonymousPosts() {
   const departments = [
     "International Relations",
-    "Computer Science",
+
   ];
 
   const [posts, setPosts] = useState([]);
