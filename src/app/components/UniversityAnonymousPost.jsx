@@ -22,23 +22,31 @@ export default function UniversityAnonymousPosts() {
   const [formError, setFormError] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitLoading, setSubmitLoading] = useState(false);
- const fetchPosts = async () => {
-      setLoading(true);
-      try {
-        let url = '/api/posts';
-     
-          url = `/api/posts/${encodeURIComponent(selectedDepartment)}`;
-        
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch posts');
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+const fetchPosts = async () => {
+  setLoading(true);
+  try {
+    let url = '/api/posts';
+
+    if (selectedDepartment !== 'All') {
+      url = `/api/posts/${encodeURIComponent(selectedDepartment)}`;
+    }
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Failed to fetch posts');
+    const data = await response.json();
+
+    // Sort posts newest first
+    data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+    setPosts(data);
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
   useEffect(() => {
    
     fetchPosts();
