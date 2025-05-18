@@ -168,7 +168,7 @@ export default function UniversityAnonymousPosts() {
 
       {/* Modal */}
       {isDialogOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-2 sm:p-4 overflow-auto z-50">
+        <div className="fixed inset-0 bg-transparent bg-opacity-50 flex items-center justify-center p-2 sm:p-4 overflow-auto z-50">
           <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-auto">
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="text-xl font-semibold">Create New Post</h2>
