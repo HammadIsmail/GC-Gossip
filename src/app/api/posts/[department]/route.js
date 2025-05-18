@@ -1,31 +1,24 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import connectToDatabase from '../../../lib/mongodb';
+import Post from '../../../models/posts';
 
-const dataFilePath = path.join(process.cwd(), 'data', 'posts.json');
-
-function getPosts() {
-  if (!fs.existsSync(dataFilePath)) {
-    return [];
-  }
-  const fileContents = fs.readFileSync(dataFilePath, 'utf8');
-  return JSON.parse(fileContents);
-}
-
-export async function GET(request, { params }) {
+export async function GET(req, context) {
   try {
-    const { department } = params;
-    const allPosts = getPosts();
+    await connectToDatabase();
+
+    const department = context.params.department;
+
+    let posts;
 
     if (department.toLowerCase() === 'all') {
-      return NextResponse.json(allPosts);
+      posts = await Post.find().sort({ createdAt: -1 });
+    } else {
+      posts = await Post.find({
+        department: { $regex: `^${department}$`, $options: 'i' },
+      }).sort({ createdAt: -1 });
     }
 
-    const filteredPosts = allPosts.filter(
-      (post) => post.department.toLowerCase() === department.toLowerCase()
-    );
-
-    return NextResponse.json(filteredPosts);
+    return NextResponse.json(posts);
   } catch (error) {
     return NextResponse.json(
       { message: 'Error fetching posts', error: error.message },

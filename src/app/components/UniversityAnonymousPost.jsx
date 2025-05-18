@@ -75,7 +75,7 @@ export default function UniversityAnonymousPosts() {
     
     try {
       // Send post to the API
-      const response = await fetch('/api/posts', {
+      const response = await fetch('/api/posts/createpost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
