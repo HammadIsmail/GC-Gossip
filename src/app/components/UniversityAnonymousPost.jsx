@@ -18,7 +18,7 @@ export default function UniversityAnonymousPosts() {
     body: '',
     department: departments[0],
   });
-  const [selectedDepartment, setSelectedDepartment] = useState('All');
+  const [selectedDepartment, setSelectedDepartment] = useState('Computer Science');
   const [formError, setFormError] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -120,14 +120,7 @@ const fetchPosts = async () => {
       <main className="container mx-auto px-2 sm:px-4 py-4 flex-grow">
         {/* Department Buttons */}
         <div className="mb-6 flex gap-2 overflow-x-auto whitespace-nowrap pb-2">
-          <button
-            onClick={() => setSelectedDepartment('All')}
-            className={`px-3 py-1 rounded-full shrink-0 ${
-              selectedDepartment === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
-            }`}
-          >
-            All Departments
-          </button>
+       
           {departments.map(dept => (
             <button
               key={dept}
