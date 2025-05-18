@@ -56,7 +56,7 @@ const fetchPosts = async () => {
 
   const handleSubmit = async () => {
     if (!newPost.header.trim() || !newPost.body.trim()) {
-      setFormError('Please fill in both the header and body fields.');
+      setFormError('Please fill in both the Title and Message  fields.');
       return;
     }
 
@@ -190,7 +190,7 @@ const fetchPosts = async () => {
               </div>
 
               <div className="mb-4">
-                <label className="block mb-1 font-medium">Post Header</label>
+                <label className="block mb-1 font-medium">Title</label>
                 <input
                   type="text"
                   name="header"
@@ -202,7 +202,7 @@ const fetchPosts = async () => {
               </div>
 
               <div className="mb-4">
-                <label className="block mb-1 font-medium">Post Body</label>
+                <label className="block mb-1 font-medium">Message</label>
                 <textarea
                   name="body"
                   value={newPost.body}
