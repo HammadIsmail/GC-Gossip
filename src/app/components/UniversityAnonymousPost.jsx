@@ -5,6 +5,16 @@ import { useState, useEffect } from 'react';
 export default function UniversityAnonymousPosts() {
   const departments = [
     "International Relations",
+    "Political Science",
+    "Computer Science",
+    "Sociology",
+    "Law",
+    "English Literature",
+    "Media Department",
+    "Phycology",
+    "Physics",
+    "Chemistry",
+    "Zoology"
 
   ];
 
