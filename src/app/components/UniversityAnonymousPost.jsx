@@ -14,7 +14,13 @@ export default function UniversityAnonymousPosts() {
     "Phycology",
     "Physics",
     "Chemistry",
-    "Zoology"
+    "Zoology",
+    "MLT",
+    "SDSC",
+    "Mathematics",
+    "Microbiology",
+    "Microbiology",
+    "Biochemistry"
 
   ];
 
