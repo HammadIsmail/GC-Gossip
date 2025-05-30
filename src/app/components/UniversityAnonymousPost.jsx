@@ -19,7 +19,7 @@ export default function UniversityAnonymousPosts() {
     "SDSC",
     "Mathematics",
     "Microbiology",
-    "Microbiology",
+  
     "Biochemistry"
 
   ];
