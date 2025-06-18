@@ -122,7 +122,7 @@ const fetchPosts = async () => {
             </button>
             <Link href="/about">
               <button className="bg-white text-blue-600 px-4 py-2 rounded-md hover:bg-blue-100 font-medium">
-                About This Site
+                About
               </button>
             </Link>
           </div>
